@@ -1,7 +1,7 @@
 {
   "name": "nocobase",
-  "version": "1.1.0",
-  "description": "NocoBase platform development plugin. Expert guidance on collections, fields, relations, workflows, UI blocks, plugin development, MCP-powered page management, data operations, and collection inspection for NocoBase applications.",
+  "version": "1.2.0",
+  "description": "DEPRECATED — superseded by nocobase-dev, which bundles the official nocobase/skills library and works through the nb CLI and REST API. The MCP server this plugin wires has no counterpart in nocobase-dev yet. NocoBase platform development plugin. Expert guidance on collections, fields, relations, workflows, UI blocks, plugin development, MCP-powered page management, data operations, and collection inspection for NocoBase applications.",
   "author": {
     "name": "AGENTS.STORE"
   },
@@ -23,8 +23,8 @@
   "skillInstructions": "Kimi Code tool mapping for this plugin's skills:\n\n- When a skill says to ask the user, ask clarifying questions, ask one question at a time, present multiple-choice options, or wait for the user's choice, call Kimi Code's `AskUserQuestion` tool. Do not render those choices as plain assistant text.\n- For `AskUserQuestion`, provide 1 question with 2-4 concrete options when possible. Put the recommended option first and suffix its label with `(Recommended)`.\n- When a skill refers to `TodoWrite`, use Kimi Code's `TodoList` tool instead.\n- When a skill says `Task tool (general-purpose)` or asks you to dispatch an implementer/reviewer subagent, use Kimi Code's `Agent` tool with a Kimi subagent type. Do not pass `general-purpose` as `subagent_type`.\n- For implementation, code review, and filled subagent prompt templates, call `Agent` with `subagent_type: \"coder\"`.\n- For read-only codebase exploration, use `Agent` with `subagent_type: \"explore\"`.\n- For read-only planning or architecture design, use `Agent` with `subagent_type: \"plan\"`.\n- When a skill refers to the `Skill` tool, use Kimi Code's native `Skill` tool.\n- Use Kimi Code's `Read`, `Write`, `Edit`, `Bash`, `Grep`, `Glob`, and MCP tools by their actual exposed names.",
   "interface": {
     "displayName": "Nocobase",
-    "shortDescription": "NocoBase platform development plugin. E\n\n<!-- truncated: content exceeds the target's size limit -->",
-    "longDescription": "NocoBase platform development plugin. Expert guidance on collections, fields, relations, workflows, UI blocks, plugin development, MCP-powered page management, data operations, and collection inspection for NocoBase applications.",
+    "shortDescription": "DEPRECATED — superseded by nocobase-dev, which bundles the official nocobase/skills library and…",
+    "longDescription": "DEPRECATED — superseded by nocobase-dev, which bundles the official nocobase/skills library and works through the nb CLI and REST API. The MCP server this plugin wires has no counterpart in nocobase-dev yet. NocoBase platform development plugin. Expert guidance on collections, fields, relations, workflows, UI blocks, plugin development, MCP-powered page management, data operations, and collection inspection for NocoBase applications.",
     "developerName": "AGENTS.STORE",
     "capabilities": [
       "Interactive",
