@@ -17,7 +17,6 @@ Copy this directory's contents into your Kimi Code plugins directory, or publish
 ## Not carried over
 
 - 6 command(s) — Kimi plugins do not support commands
-- MCP servers — Kimi plugins do not support MCP server declarations
 
 ## Source
 
