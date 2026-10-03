@@ -1,7 +1,7 @@
 {
   "name": "postgresql-external-dev",
-  "version": "1.0.1",
-  "description": "PostgreSQL schema design for external database connections. Compatible SQL patterns for NocoDB and NocoBase — table creation, column types, relations, indexes, and anti-patterns.",
+  "version": "1.2.0",
+  "description": "PostgreSQL knowledge for low-code stacks. Schema design for external database connections (compatible SQL patterns for NocoDB and NocoBase — table creation, column types, relations, indexes, anti-patterns), plus the 29-tool PostgreSQL MCP reference and the PostgREST REST API.",
   "author": {
     "name": "AGENTS.STORE"
   },
@@ -12,6 +12,8 @@
     "database",
     "schema",
     "sql",
+    "postgrest",
+    "mcp",
     "nocodb",
     "nocobase",
     "external-database",
@@ -26,8 +28,8 @@
   "skillInstructions": "Kimi Code tool mapping for this plugin's skills:\n\n- When a skill says to ask the user, ask clarifying questions, ask one question at a time, present multiple-choice options, or wait for the user's choice, call Kimi Code's `AskUserQuestion` tool. Do not render those choices as plain assistant text.\n- For `AskUserQuestion`, provide 1 question with 2-4 concrete options when possible. Put the recommended option first and suffix its label with `(Recommended)`.\n- When a skill refers to `TodoWrite`, use Kimi Code's `TodoList` tool instead.\n- When a skill says `Task tool (general-purpose)` or asks you to dispatch an implementer/reviewer subagent, use Kimi Code's `Agent` tool with a Kimi subagent type. Do not pass `general-purpose` as `subagent_type`.\n- For implementation, code review, and filled subagent prompt templates, call `Agent` with `subagent_type: \"coder\"`.\n- For read-only codebase exploration, use `Agent` with `subagent_type: \"explore\"`.\n- For read-only planning or architecture design, use `Agent` with `subagent_type: \"plan\"`.\n- When a skill refers to the `Skill` tool, use Kimi Code's native `Skill` tool.\n- Use Kimi Code's `Read`, `Write`, `Edit`, `Bash`, `Grep`, `Glob`, and MCP tools by their actual exposed names.",
   "interface": {
     "displayName": "Postgresql External Dev",
-    "shortDescription": "PostgreSQL schema design for external database connections. Compatible SQL patterns for NocoDB and…",
-    "longDescription": "PostgreSQL schema design for external database connections. Compatible SQL patterns for NocoDB and NocoBase — table creation, column types, relations, indexes, and anti-patterns.",
+    "shortDescription": "PostgreSQL knowledge for low-code stacks. Schema design for external database connections…",
+    "longDescription": "PostgreSQL knowledge for low-code stacks. Schema design for external database connections (compatible SQL patterns for NocoDB and NocoBase — table creation, column types, relations, indexes, anti-patterns), plus the 29-tool PostgreSQL MCP reference and the PostgREST REST API.",
     "developerName": "AGENTS.STORE",
     "capabilities": [
       "Interactive",
