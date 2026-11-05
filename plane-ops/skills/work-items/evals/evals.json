@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the work-items skill. Create a work item in project TaskFlow: 'Fix login 500 on Safari', high priority, 3 points, assigned to Alice, labeled 'bug'. Show every call including how names become ids, and the description you write. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the work-items skill. Create a work item in project TaskFlow: 'Fix login 500 on Safari', high priority, 3 points, assigned to Alice, labeled 'bug'. Show every call including how names become ids, and the description you write. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "project(action=list), member(action=list_project), label(action=list), then workitem(action=create) with description_html, priority, point, assignees and labels.",
       "files": [],
       "expectations": [
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "prompt": "Use the work-items skill. Mark PROJ-148 as blocked by PROJ-140. Show the calls in order and how you check the result. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the work-items skill. Mark PROJ-148 as blocked by PROJ-140. Show the calls in order and how you check the result. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Resolves both item UUIDs and calls workitem_relation(action=create) with relation_type blocked_by.",
       "files": [],
       "expectations": [
@@ -31,7 +31,7 @@
     },
     {
       "id": 3,
-      "prompt": "Use the work-items skill. Log 2 hours 30 minutes of work on PROJ-148 with description 'Debug + fix'. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the work-items skill. Log 2 hours 30 minutes of work on PROJ-148 with description 'Debug + fix'. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Calls work_log(action=create) with duration as integer minutes (150) after checking that time tracking is enabled.",
       "files": [],
       "expectations": [
@@ -43,7 +43,7 @@
     },
     {
       "id": 4,
-      "prompt": "Use the work-items skill. Find all work items in TaskFlow that mention 'webhook'. Show the exact call or calls and how results are limited to TaskFlow. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the work-items skill. Find all work items in TaskFlow that mention 'webhook'. Show the exact call or calls and how results are limited to TaskFlow. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "workitem(action=search, query) as a workspace-wide search filtered to TaskFlow, or the project-scoped pql title filter.",
       "files": [],
       "expectations": [
@@ -56,7 +56,7 @@
     },
     {
       "id": 5,
-      "prompt": "Use the work-items skill. Add a comment to PROJ-148: 'Reproduced on Safari 17.4, root cause is the Set-Cookie SameSite flag'. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the work-items skill. Add a comment to PROJ-148: 'Reproduced on Safari 17.4, root cause is the Set-Cookie SameSite flag'. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Resolves work item by identifier and calls workitem_comment(action=create) with an HTML comment_html body.",
       "files": [],
       "expectations": [
@@ -68,7 +68,7 @@
     },
     {
       "id": 6,
-      "prompt": "Use the work-items skill. Show me every urgent or high priority item assigned to me in TaskFlow that is still open, and how many items each person has in progress. Show each call with its filter, say how you stay within the filter limits and look up the filter syntax, and how you page through long results. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the work-items skill. Show me every urgent or high priority item assigned to me in TaskFlow that is still open, and how many items each person has in progress. Show each call with its filter, say how you stay within the filter limits and look up the filter syntax, and how you page through long results. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "PQL-filtered workitem list with assignee = currentUser(), plus a count grouped by assignee; no client-side filtering of a full listing.",
       "expectations": [
         "The answer lists with workitem(action=list, project_id, pql=...) instead of filtering a full listing client-side",
@@ -82,7 +82,7 @@
     },
     {
       "id": 7,
-      "prompt": "Use the work-items skill. Set the 'RICE score' custom property on PROJ-148 to 42. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the work-items skill. Set the 'RICE score' custom property on PROJ-148 to 42. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Resolves the property id through workitem_property list and writes the value with workitem_property(action=set_value); does not try to pass it through workitem update.",
       "expectations": [
         "The answer says to resolve PROJ-148 with workitem(action=retrieve_by_identifier, workitem_identifier=\"PROJ-148\")",

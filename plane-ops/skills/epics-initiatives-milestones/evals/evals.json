@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the epics-initiatives-milestones skill. I need to track the 'Multi-tenant support' work in project TaskFlow. It's 2 months of work, one tech lead, no fixed release date. Epic, module, milestone, or initiative? Then show me the calls that create it. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the epics-initiatives-milestones skill. I need to track the 'Multi-tenant support' work in project TaskFlow. It's 2 months of work, one tech lead, no fixed release date. Epic, module, milestone, or initiative? Then show me the calls that create it. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Recommends an epic from the decision table and creates it as a work item of type Epic.",
       "files": [],
       "expectations": [
@@ -29,7 +29,7 @@
     },
     {
       "id": 3,
-      "prompt": "Use the epics-initiatives-milestones skill. Create an initiative 'International expansion Q3' spanning projects Billing, Onboarding, and Compliance. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the epics-initiatives-milestones skill. Create an initiative 'International expansion Q3' spanning projects Billing, Onboarding, and Compliance. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Calls initiative(action=create) with name, lead, dates, state, then initiative(action=add_projects, project_ids=[...]) for the three projects, and reads them back with initiative(action=list_projects).",
       "files": [],
       "expectations": [
@@ -53,7 +53,7 @@
     },
     {
       "id": 5,
-      "prompt": "Use the epics-initiatives-milestones skill. Create the epic 'Multi-tenant support' in TaskFlow and attach it to the 'International expansion Q3' initiative, then list all epics in the project. Also say how its child stories get attached to the epic. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the epics-initiatives-milestones skill. Create the epic 'Multi-tenant support' in TaskFlow and attach it to the 'International expansion Q3' initiative, then list all epics in the project. Also say how its child stories get attached to the epic. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Epic created as a work item of type Epic (no epic tool), listed with a type filter, linked to the initiative through manage_workitems.",
       "expectations": [
         "The answer says an epic is a work item whose type is named Epic",
@@ -67,7 +67,7 @@
     },
     {
       "id": 6,
-      "prompt": "Use the epics-initiatives-milestones skill. How far along is the Multi-tenant epic (PROJ-5)? Give me counts per state and the points done. Show the calls, then compute the completion rate from this listing: PROJ-6 (5 points, done), PROJ-7 (3 points, done), PROJ-8 (8 points, in progress), PROJ-9 (5 points, not started). In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the epics-initiatives-milestones skill. How far along is the Multi-tenant epic (PROJ-5)? Give me counts per state and the points done. Show the calls, then compute the completion rate from this listing: PROJ-6 (5 points, done), PROJ-7 (3 points, done), PROJ-8 (8 points, in progress), PROJ-9 (5 points, not started). If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "One count call grouped by state group for the children of PROJ-5, plus a listing for the point sums.",
       "expectations": [
         "The answer says to count children with workitem(action=count, pql='childOf(\"PROJ-5\")', group_by=state__group)",

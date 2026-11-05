@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the sprint-review-retro skill. Sprint 15 for TaskFlow just ended. Generate a full sprint review report: goal status, completion metrics, what was completed and what was not, velocity trend vs last 3 sprints. Format it so I can demo it to stakeholders. Sprint 15 data: goal 'Ship checkout v2'; 34 of 40 points done and 8 of 10 items done; not delivered: PROJ-312 (3 points, in progress) and PROJ-315 (3 points, blocked); the last three completed sprints delivered 28, 31 and 30 points. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the sprint-review-retro skill. Sprint 15 for TaskFlow just ended. Generate a full sprint review report: goal status, completion metrics, what was completed and what was not, velocity trend vs last 3 sprints. Format it so I can demo it to stakeholders. Sprint 15 data: goal 'Ship checkout v2'; 34 of 40 points done and 8 of 10 items done; not delivered: PROJ-312 (3 points, in progress) and PROJ-315 (3 points, blocked); the last three completed sprints delivered 28, 31 and 30 points. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Stakeholder-ready review: sprint name + dates + goal, completion rate in points and item count, Delivered table (ID/title/points/owner), Not Delivered list with reasons, velocity comparison to previous 3 sprints, goal achievement verdict (Yes/Partial/No).",
       "files": [],
       "expectations": [
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "prompt": "Use the sprint-review-retro skill. Run a retrospective for Sprint 14. Use the DAKI format. Previous retro's action items were: (1) 'Review PRs within 4 hours' - done, (2) 'Set up staging deploy' - still open. Give the order of the session, the new action items you propose, and what gets recorded in Plane and how. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the sprint-review-retro skill. Run a retrospective for Sprint 14. Use the DAKI format. Previous retro's action items were: (1) 'Review PRs within 4 hours' - done, (2) 'Set up staging deploy' - still open. Give the order of the session, the new action items you propose, and what gets recorded in Plane and how. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Starts with previous action review, shows DAKI prompts, creates 2-3 new action items with SMART criteria, saves as a page.",
       "files": [],
       "expectations": [
@@ -31,7 +31,7 @@
     },
     {
       "id": 3,
-      "prompt": "Use the sprint-review-retro skill. Sprint 14 is done. 3 items still in progress, 1 blocked, 1 not started. Walk me through closing the sprint. Show each call in order with its parameters, and say what happens to each of the five unfinished items. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the sprint-review-retro skill. Sprint 14 is done. 3 items still in progress, 1 blocked, 1 not started. Walk me through closing the sprint. Show each call in order with its parameters, and say what happens to each of the five unfinished items. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Take blocked and not-started items out of the cycle (cycle manage_workitems remove_ids) so they return to the backlog, complete the cycle, transfer the remaining unfinished in-progress items to the next cycle, then archive the current cycle.",
       "files": [],
       "expectations": [

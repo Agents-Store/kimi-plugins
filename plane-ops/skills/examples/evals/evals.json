@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the examples skill. I have a new feature request 'Two-factor authentication' to add to TaskFlow. Create it with acceptance criteria, estimate 5 points, label it type/feature + area/auth, and drop it into the current cycle 'Sprint 15'. Show me the exact MCP tool calls and name the reference file of the examples skill that gives the parameter formats. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the examples skill. I have a new feature request 'Two-factor authentication' to add to TaskFlow. Create it with acceptance criteria, estimate 5 points, label it type/feature + area/auth, and drop it into the current cycle 'Sprint 15'. Show me the exact MCP tool calls and name the reference file of the examples skill that gives the parameter formats. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Concrete calls in order: project(action=list), label(action=list), cycle(action=list, status=current), workitem(action=create) with point and labels, cycle(action=manage_workitems) with add_ids, read back with list_workitems.",
       "files": [],
       "expectations": [
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "prompt": "Use the examples skill. Walk me through the full sprint lifecycle from planning to close in Plane. Read the sprint-lifecycle scenario reference and show me the tool calls at each phase. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the examples skill. Walk me through the full sprint lifecycle from planning to close in Plane. Read the sprint-lifecycle scenario reference and show me the tool calls at each phase. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "The Monday-to-Friday scenario of sprint-lifecycle.md with its concrete calls: capacity, planning, standup, blocker, close and retro.",
       "files": [],
       "expectations": [

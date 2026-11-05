@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the connector-bootstrap skill. Create a new sprint for my Plane project. The Plane tools are not visible in my tool list yet. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. Create a new sprint for my Plane project. The Plane tools are not visible in my tool list yet. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Agent probes ToolSearch with multiple queries (plane, workitem cycle module, then legacy names) and discovers deferred Plane tools - resource tools such as cycle with an action parameter, or legacy create_cycle - before asking for more info or refusing.",
       "files": [],
       "expectations": [
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "prompt": "Use the connector-bootstrap skill. I have two Plane workspaces connected: one self-hosted and one cloud. Show me the backlog. Describe how you find the tools, what you notice about having two connections, and what you do before touching either instance. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. I have two Plane workspaces connected: one self-hosted and one cloud. Show me the backlog. Describe how you find the tools, what you notice about having two connections, and what you do before touching either instance. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Agent detects multiple Plane instances from ToolSearch results and asks which one to use before listing anything.",
       "files": [],
       "expectations": [
@@ -29,7 +29,7 @@
     },
     {
       "id": 3,
-      "prompt": "Use the connector-bootstrap skill. I don't have Plane set up. Tell me I don't have Plane tools. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. I don't have Plane set up. Tell me I don't have Plane tools. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Agent probes ToolSearch at least 4 times across relevant domains before concluding Plane is not connected, and reports which probes were run.",
       "files": [],
       "expectations": [
@@ -41,7 +41,7 @@
     },
     {
       "id": 4,
-      "prompt": "Use the connector-bootstrap skill. We run Plane on our own server and want Claude Code to work with it from a CI job, with nobody there to log in through a browser. Plane tools are not connected yet. How do I connect it? In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. We run Plane on our own server and want Claude Code to work with it from a CI job, with nobody there to log in through a browser. Plane tools are not connected yet. How do I connect it? If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Self-hosted headless setup: stdio server with the three environment variables, a connection name containing plane, and the limits of the hosted server.",
       "files": [],
       "expectations": [
@@ -55,7 +55,7 @@
     },
     {
       "id": 5,
-      "prompt": "Use the connector-bootstrap skill. What's the weather in Berlin tomorrow? In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. What's the weather in Berlin tomorrow? If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Agent does NOT trigger connector-bootstrap — this is unrelated to work management.",
       "files": [],
       "expectations": [
@@ -66,7 +66,7 @@
     },
     {
       "id": 6,
-      "prompt": "Use the connector-bootstrap skill. Plane MCP 0.3.3 is connected. My call workitem(action=retrieve, project_id=<id>, work_item_id=<id>) was rejected as invalid. Fix the call. Afterwards I want PROJ-9 deleted: tell me what happens when you call delete and what you do if I decline the dialog. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. Plane MCP 0.3.3 is connected. My call workitem(action=retrieve, project_id=<id>, work_item_id=<id>) was rejected as invalid. Fix the call. Afterwards I want PROJ-9 deleted: tell me what happens when you call delete and what you do if I decline the dialog. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Corrected call with workitem_id, the declared-parameters rule, and the delete behavior of the safety hook.",
       "files": [],
       "expectations": [
@@ -80,7 +80,7 @@
     },
     {
       "id": 7,
-      "prompt": "Use the connector-bootstrap skill. Create an epic 'Checkout redesign' in project TaskFlow and attach it to the initiative 'Q4 Growth'. Say which tool names you look for and give the full call sequence with parameters. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. Create an epic 'Checkout redesign' in project TaskFlow and attach it to the initiative 'Q4 Growth'. Say which tool names you look for and give the full call sequence with parameters. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Agent knows that no epic tools exist: resolves the Epic work item type, creates a workitem with that type_id, then attaches it with initiative(action=manage_workitems, add_ids=[...]).",
       "files": [],
       "expectations": [
@@ -92,7 +92,7 @@
     },
     {
       "id": 8,
-      "prompt": "Use the connector-bootstrap skill. Add PROJ-148 and PROJ-150 to the Sprint 15 cycle of TaskFlow. This Plane connector is an old one: ToolSearch only shows list_cycles, create_cycle, list_work_items, add_work_items_to_cycle and similar per-operation tools; there is no workitem or cycle tool. Show each call with its parameters, how you resolve the two identifiers, and what you tell me about this connector. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. Add PROJ-148 and PROJ-150 to the Sprint 15 cycle of TaskFlow. This Plane connector is an old one: ToolSearch only shows list_cycles, create_cycle, list_work_items, add_work_items_to_cycle and similar per-operation tools; there is no workitem or cycle tool. Show each call with its parameters, how you resolve the two identifiers, and what you tell me about this connector. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Agent recognizes the per-operation surface, uses the fallback table to translate cycle(action=manage_workitems, add_ids=[...]) into the connector's add_work_items_to_cycle with issue_ids, and checks the schema for parameter names first.",
       "expectations": [
         "The answer says this is the per-operation fallback surface and not that Plane is not connected",
@@ -106,7 +106,7 @@
     },
     {
       "id": 9,
-      "prompt": "Use the connector-bootstrap skill. Which work items are overdue and still open across all our Plane projects? We run Plane MCP 0.3.3. Show the exact call including its filter, how you find the tool, and how you handle a long result. In this session you have no Plane tools and no shell, only file reading and a text answer: say which Plane MCP calls you would make (resource(action=..., ...) with their parameters), in what order, and what you would check, and show the result you would give me.",
+      "prompt": "Use the connector-bootstrap skill. Which work items are overdue and still open across all our Plane projects? We run Plane MCP 0.3.3. Show the exact call including its filter, how you find the tool, and how you handle a long result. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Agent finds the resource surface and uses a server-side PQL filter on workitem list without a project_id, instead of looping over projects and filtering client-side.",
       "expectations": [
         "The answer says to probe ToolSearch (plane, workitem cycle module) and finds the workitem tool",
