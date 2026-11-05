@@ -3,16 +3,16 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the sprint-planning skill. Plan Sprint 16 for TaskFlow. 1-week sprint starting Monday. Team: 3 devs. Our last 3 sprints completed 18, 22, 20 points. Set a sprint goal, calculate capacity, pick items from backlog, create the cycle. Candidates from the backlog: PROJ-201 (5 points, has acceptance criteria), PROJ-202 (3, has acceptance criteria), PROJ-203 (8, has acceptance criteria), PROJ-204 (13, no acceptance criteria), PROJ-205 (2, blocked by PROJ-204). Walk each candidate through the readiness checklist, and show the create-cycle call and how the items are added and checked. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
+      "prompt": "Use the sprint-planning skill. Plan Sprint 16 for TaskFlow. 1-week sprint starting Monday. Team: 3 devs. Our last 3 sprints completed 18, 22, 20 points. Set a sprint goal, calculate capacity, pick items from backlog, create the cycle. Candidates from the backlog: PROJ-201 (5 points, has acceptance criteria), PROJ-202 (3, has acceptance criteria), PROJ-203 (8, has acceptance criteria), PROJ-204 (13, no acceptance criteria), PROJ-205 (2, blocked by PROJ-204). Walk each candidate through the readiness checklist, and show the create-cycle call and how the items are added and checked. If you can't run it here, show me the exact calls you would make, in order, and what they return. Keep it brief: no preamble, the key points and calls first, about 15 lines in all.",
       "expected_output": "Full planning ceremony: velocity avg 20 × 0.85 ≈ 17 → adjusted for Bob's 50% (team has 2.5 FTE not 3, so ~14-15 capacity), sprint goal in the 'users can X so that Y' format, item selection honoring DoR, cycle(action=create) call with owned_by, cycle(action=manage_workitems) with add_ids.",
       "files": [],
       "expectations": [
         "The answer takes the average velocity of the last three sprints as 20 points",
         "The answer computes the capacity as 20 × 0.85 = 17 points",
-        "The answer flags PROJ-204 for decomposition because it is above 8 points",
+        "The answer says PROJ-204 (13 points) has to be decomposed before it can enter a sprint",
         "The answer does not take PROJ-205 because it is blocked by PROJ-204",
-        "The answer creates the cycle with cycle(action=create, ..., owned_by=<current user id>)",
-        "The answer adds the items with cycle(action=manage_workitems, add_ids=[...])"
+        "The answer says to create the cycle with cycle(action=create, ..., owned_by=<current user id>)",
+        "The answer says to add the items with cycle(action=manage_workitems, add_ids=[...])"
       ]
     },
     {

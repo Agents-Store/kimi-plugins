@@ -4,7 +4,7 @@
     "should_trigger": true
   },
   {
-    "query": "How do I turn WSJF scores into Plane priority values: which part of the ranking gets urgent, high, medium and low?",
+    "query": "How do I find backlog items in Plane that went stale and have nobody assigned, without pulling the whole backlog, and what should I do with them?",
     "should_trigger": true
   },
   {

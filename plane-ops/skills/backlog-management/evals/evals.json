@@ -8,8 +8,8 @@
       "files": [],
       "expectations": [
         "The answer counts the open backlog with workitem(action=count, pql='stateGroup IN (\"backlog\",\"unstarted\")')",
-        "The answer lists the backlog items with workitem(action=list, pql='stateGroup IN (\"backlog\",\"unstarted\")') and follows next_cursor",
-        "The answer reports 18 unestimated items, 14 unassigned items and 21 items with no priority",
+        "The answer says to list the backlog items with workitem(action=list, pql='stateGroup IN (\"backlog\",\"unstarted\")') and to follow next_cursor",
+        "The answer states 18 items without points, 14 without an assignee and 21 without a priority",
         "The answer computes health_score as (ready_items / total_items) × 100",
         "The answer reports a health score of 43% (29 ready items of 67)",
         "The answer puts the score 43% in the Unhealthy tier (below 50%)"
@@ -21,10 +21,10 @@
       "expected_output": "WSJF = (BV + TC + RR) / job size: typo 3.0, logging 2.6, SSO 2.4.",
       "files": [],
       "expectations": [
-        "The answer uses the WSJF formula (Business Value + Time Criticality + Risk Reduction) / Job Size",
-        "The answer gives the typo fix a WSJF of 3.0",
-        "The answer gives the logging migration a WSJF of 2.6",
-        "The answer gives the SSO login a WSJF of 2.4",
+        "The answer says to use the WSJF formula (Business Value + Time Criticality + Risk Reduction) / Job Size",
+        "The answer says to give the typo fix a WSJF of 3.0",
+        "The answer says to give the logging migration a WSJF of 2.6",
+        "The answer says to give the SSO login a WSJF of 2.4",
         "The answer ranks the typo fix first, the logging migration second and the SSO login third"
       ]
     },
@@ -55,15 +55,15 @@
     },
     {
       "id": 5,
-      "prompt": "Use the backlog-management skill. Which backlog items in TaskFlow have gone stale and have nobody assigned? Don't pull the whole backlog into the conversation. Also tell me what to do with the stale ones, and how to find the items that have no estimate or no description. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
+      "prompt": "Use the backlog-management skill. Which backlog items in TaskFlow have gone stale and have nobody assigned? Don't pull the whole backlog into the conversation. Also tell me what to do with the stale ones, and how to find the items that have no estimate or no description. If you can't run it here, show me the exact calls you would make, in order, and what they return. Keep it brief: no preamble, the key points and calls first, about 15 lines in all.",
       "expected_output": "Server-side PQL filter on the backlog state groups, hasNoAssignee() and updatedAt < daysAgo(n), counted first and listed second; stale items proposed for cancel-then-archive, never silently deleted.",
       "expectations": [
-        "The answer passes a pql filter to workitem(action=list) instead of filtering client-side",
-        "The answer uses hasNoAssignee() in the pql filter",
-        "The answer uses updatedAt < daysAgo(42) in the pql filter",
-        "The answer counts first with workitem(action=count) and reads total_count before listing",
-        "The answer cancels the stale items and then archives them with workitem(action=archive)",
-        "The answer reads the point and description_stripped fields of the listed items to find unestimated or no-description items"
+        "The answer says to pass a pql filter to workitem(action=list) instead of filtering client-side",
+        "The answer says to use hasNoAssignee() in the pql filter",
+        "The answer says to use updatedAt < daysAgo(42) in the pql filter",
+        "The answer says to count first with workitem(action=count) and to read total_count before listing",
+        "The answer says to cancel the stale items and then to archive them with workitem(action=archive)",
+        "The answer says to read the point and description_stripped fields of the listed items to find unestimated or no-description items"
       ],
       "files": []
     }

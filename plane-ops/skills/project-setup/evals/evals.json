@@ -3,16 +3,16 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the project-setup skill. I just configured a new Plane project with your setup workflow and want to be sure nothing is missing before the first sprint. What do you check, with which calls, and what result do you expect from each? If you can't run it here, show me the exact calls you would make, in order, and what they return.",
+      "prompt": "Use the project-setup skill. I just configured a new Plane project with your setup workflow and want to be sure nothing is missing before the first sprint. What do you check, with which calls, and what result do you expect from each? If you can't run it here, show me the exact calls you would make, in order, and what they return. Keep it brief: no preamble, the key points and calls first, about 15 lines in all.",
       "expected_output": "The four verification calls of the setup checklist with the expected result of each.",
       "files": [],
       "expectations": [
-        "The answer checks the states with state(action=list, project_id=<id>)",
-        "The answer expects 4-6 states in the correct groups",
-        "The answer checks the labels with label(action=list, project_id=<id>)",
-        "The answer checks the types with workitem_type(action=list, project_id=<id>)",
-        "The answer expects at least the types Story, Task and Bug",
-        "The answer checks the features with project(action=get_features, project_id=<id>)"
+        "The answer says to check the states with state(action=list, project_id=<id>)",
+        "The answer says to expect 4-6 states in the correct groups",
+        "The answer says to check the labels with label(action=list, project_id=<id>)",
+        "The answer says to check the types with workitem_type(action=list, project_id=<id>)",
+        "The answer says to expect at least the types Story, Task and Bug",
+        "The answer says to check the features with project(action=get_features, project_id=<id>)"
       ]
     },
     {
@@ -34,12 +34,12 @@
       "expected_output": "Applies the Standard Template: 6 states, all label groups, Story/Task/Bug/Spike types, cycles + modules + epics + pages + views, Business Value and Risk Level properties.",
       "files": [],
       "expectations": [
-        "The answer uses the Standard Template",
-        "The answer creates the six states Backlog, Todo, In Progress, In Review, Done and Cancelled",
-        "The answer creates the types Story, Task, Bug and Spike with workitem_type(action=resolve)",
-        "The answer enables modules, epics and views with project(action=update_features)",
-        "The answer creates Business Value as a DECIMAL property with workitem_property(action=create, workitem_type_id, ...)",
-        "The answer creates Risk Level as an OPTION property with workitem_property(action=create, workitem_type_id, ...)"
+        "The answer says to use the Standard Template",
+        "The answer says to create the six states Backlog, Todo, In Progress, In Review, Done and Cancelled",
+        "The answer says to create the types Story, Task, Bug and Spike with workitem_type(action=resolve)",
+        "The answer says to enable modules, epics and views with project(action=update_features)",
+        "The answer says to create Business Value as a DECIMAL property with workitem_property(action=create, workitem_type_id, ...)",
+        "The answer says to create Risk Level as an OPTION property with workitem_property(action=create, workitem_type_id, ...)"
       ]
     },
     {

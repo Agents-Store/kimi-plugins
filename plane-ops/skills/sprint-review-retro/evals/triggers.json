@@ -28,7 +28,7 @@
     "should_trigger": true
   },
   {
-    "query": "How do I find last retro's action items in Plane by their label and see which of them are still open?",
+    "query": "Wrap up our current cycle in Plane: run the retro and create the follow-up action items as work items",
     "should_trigger": true
   },
   {

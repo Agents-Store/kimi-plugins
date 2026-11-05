@@ -4,11 +4,11 @@
     "should_trigger": true
   },
   {
-    "query": "Как в Plane найти через PQL просроченные задачи спринта и задачи в работе без исполнителя для стендапа?",
+    "query": "Подготовь асинхронный стендап для команды из пяти часовых поясов и опубликуй его страницей в Plane",
     "should_trigger": true
   },
   {
-    "query": "Run the standup with me: summarize progress per team member from Plane and list the questions to ask",
+    "query": "What does the daily standup dashboard in Plane show for each person, and how are the DONE, DOING, NEXT and BLOCKED labels decided?",
     "should_trigger": true
   },
   {

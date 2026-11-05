@@ -3,16 +3,16 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Use the estimation skill. Estimate these 5 backlog items for TaskFlow using Fibonacci, compare each to our 3-point reference story 'Login with email': (1) Add CAPTCHA to signup, (2) Migrate the entire checkout flow to Stripe Elements, (3) Fix typo in footer, (4) Build admin export-to-CSV with filters, (5) Research: should we use Pusher or Ably for realtime? Say which items need splitting or a different treatment, and why. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
+      "prompt": "Use the estimation skill. Estimate these 5 backlog items for TaskFlow using Fibonacci, compare each to our 3-point reference story 'Login with email': (1) Add CAPTCHA to signup, (2) Migrate the entire checkout flow to Stripe Elements, (3) Fix typo in footer, (4) Build admin export-to-CSV with filters, (5) Research: should we use Pusher or Ably for realtime? Say which items need splitting or a different treatment, and why. If you can't run it here, show me the exact calls you would make, in order, and what they return. Keep it brief: no preamble, the key points and calls first, about 15 lines in all.",
       "expected_output": "Per-item estimate with Fibonacci value, rationale comparing to the 3-point reference, complexity factors named. Item (2) flagged for decomposition (>8). Item (5) suggested as a spike with timebox.",
       "files": [],
       "expectations": [
-        "The answer checks the project's estimate system with project_estimate(action=retrieve, project_id=...)",
-        "The answer writes the agreed value with workitem(action=update, ..., point=<n>)",
+        "The answer says to check the project's estimate system with project_estimate(action=retrieve, project_id=...)",
+        "The answer says to write the agreed value with workitem(action=update, ..., point=<n>)",
         "The answer rates the footer typo (item 3) at 1 point",
         "The answer says the Stripe Elements migration (item 2) is more than 8 points and sends it to the task-decomposition skill",
         "The answer treats the Pusher or Ably question (item 5) as a timeboxed spike",
-        "The answer uses only the values 1, 2, 3, 5, 8 and 13"
+        "The answer says to use only the values 1, 2, 3, 5, 8 and 13"
       ]
     },
     {

@@ -17,14 +17,14 @@
     },
     {
       "id": 2,
-      "prompt": "Use the velocity-metrics skill. Analyze burndown for active Sprint 14. Sprint is day 3 of 5, 40 points total, 22 completed. Should we be worried? If you can't run it here, show me the exact calls you would make, in order, and what they return.",
+      "prompt": "Use the velocity-metrics skill. Analyze burndown for active Sprint 14. Sprint is day 3 of 5, 40 points total, 22 completed. Should we be worried? If you can't run it here, show me the exact calls you would make, in order, and what they return. Keep it brief: no preamble, the key points and calls first, about 15 lines in all.",
       "expected_output": "Ideal remaining = 40 × (2/5) = 16 pts. Actual remaining = 18. That's 1.125× ideal → AT RISK (needs >1.2× to be fully AT RISK, but close). Recommend focus on in-progress, not starting new.",
       "files": [],
       "expectations": [
         "The answer calculates ideal remaining correctly (16 pts)",
         "The answer computes actual vs ideal ratio (18/16 = 1.125)",
         "The answer categorizes as ON TRACK / AT RISK / BEHIND per the skill's thresholds",
-        "The answer gives concrete advice: focus on completing in-progress, don't start new items",
+        "The answer says to give concrete advice: focus on completing in-progress, don't start new items",
         "The answer calculates required pace for the remaining days"
       ]
     },
@@ -59,12 +59,12 @@
       "prompt": "Use the velocity-metrics skill. How many work items did TaskFlow finish in each of the last 4 sprints, and how many are in progress right now? Show the calls and how you turn the counts into sprint names, and say whether this gives velocity in points. If you can't run it here, show me the exact calls you would make, in order, and what they return.",
       "expected_output": "Throughput per completed sprint from one workitem(action=count) call grouped by cycle_id, and current WIP from a second count on the started state group; cycle ids mapped to sprint names.",
       "expectations": [
-        "The answer counts the finished items per sprint with workitem(action=count, ..., group_by=cycle_id)",
+        "The answer says to count the finished items per sprint with workitem(action=count, ..., group_by=cycle_id)",
         "The answer uses pql='cycle IN completedCycles() AND stateGroup = \"completed\"' in that count",
-        "The answer maps the cycle ids to sprint names with cycle(action=list, status=completed)",
-        "The answer counts the current WIP with workitem(action=count, pql='stateGroup = \"started\"')",
+        "The answer says to map the cycle ids to sprint names with cycle(action=list, status=completed)",
+        "The answer says to count the current WIP with workitem(action=count, pql='stateGroup = \"started\"')",
         "The answer says count returns items and not story points",
-        "The answer filters with stateGroup and not with state__group"
+        "The answer says to filter with stateGroup and not with state__group"
       ],
       "files": []
     }

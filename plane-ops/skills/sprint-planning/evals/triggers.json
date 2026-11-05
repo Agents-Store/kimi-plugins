@@ -12,7 +12,7 @@
     "should_trigger": true
   },
   {
-    "query": "Select candidates for the next sprint in Plane: which PQL filter lists backlog and unstarted items and how do I check each one against the Definition of Ready?",
+    "query": "How do I create the next sprint in Plane with a goal, add the selected items and verify what the cycle holds afterwards?",
     "should_trigger": true
   },
   {
